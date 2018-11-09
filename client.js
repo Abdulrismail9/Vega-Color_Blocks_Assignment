@@ -9,6 +9,9 @@ function onReady(){
     $('#green').on('click', greenBox);
     $('#yellow').on('click', yellowBox);
     $('#boxes').on('click', '.box1', deleteRedBlck);
+    $('#boxes').on('click', '.box2', deleteBlueBlck);
+    $('#boxes').on('click', '.box3', deleteGreenBlck);
+    $('#boxes').on('click', '.box4', deleteYellowBlck);
 }
 let redCount = 1;
 let blueCount = 1;
@@ -46,6 +49,22 @@ function yellowBox(){
 // delete function for each block
 function deleteRedBlck() {
     $(this).remove();
-    $('#boxes').append('<div class="box1"> </div>');
+    $('.redBlocks').empty(redCount);
+    $('.redBlocks').append(redCount -= 1);
+}
+function deleteBlueBlck() {
+    $(this).remove();
+    $('.blueBlocks').empty(blueCount);
+    $('.blueBlocks').append(blueCount -= 1);
+}
+function deleteGreenBlck() {
+    $(this).remove();
+    $('.greenBlocks').empty(greenCount);
+    $('.greenBlocks').append(greenCount -= 1);
+}
+function deleteYellowBlck() {
+    $(this).remove();
+    $('.yellowBlocks').empty(yellowCount);
+    $('.yellowBlocks').append(yellowCount -= 1);
 }
 
